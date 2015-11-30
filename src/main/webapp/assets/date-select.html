@@ -1,0 +1,6 @@
+<label for="date">Select date</label>
+<input required readonly type="text" class="form-control" uib-datepicker-popup="{{customerCtrl.data.settings.dateFormat}}" 
+	ng-model="bookingCtrl.bookingModel.date" ng-change="selectDate()" />
+	
+<uib-datepicker max-date="maxDate" min-date="minDate" show-weeks="true" class="well well-sm" 
+	ng-model="bookingCtrl.bookingModel.date" starting-day="1" custom-class="getDayClass(date, mode)" ng-change="selectDate()"></uib-datepicker>

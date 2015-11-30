@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="booking">
+<head>
+<meta charset="UTF-8">
+<title>MiKKa booking system</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+	crossorigin="anonymous">
+	
+<link rel="stylesheet" href="styles/booking.css" />
+
+<!-- Angularjs -->	
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+<!-- Bootstrap ui angularjs lib -->
+<script src="scripts/libs/ui-bootstrap-tpls-0.14.3.min.js"></script>
+
+<!-- Booking app -->
+<script src="scripts/app.js"></script>
+
+<!-- Booking controllers -->
+<script src="scripts/controllers/customerController.js"></script>
+<script src="scripts/controllers/bookingController.js"></script>
+<script src="scripts/controllers/confirmationController.js"></script>
+
+<!-- Booking services -->
+<script src="scripts/services/bookingService.js"></script>
+
+<!-- Booking directives -->
+<script src="scripts/directives/bookingDirectives.js"></script>
+
+</head>
+<body ng-controller="CustomerController as customerCtrl">
+	<div id="booking" class="container-fluid">
+		<img alt="" ng-src="{{customerCtrl.data.logo}}" ng-show="customerCtrl.data.settings.isShowedLogo"/>
+		<h2>Book an appointment <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></h2>
+		
+		<div ng-controller="BookingController as bookingCtrl" 
+			ng-show="customerCtrl.data.settings.isSelectServiceFirst">
+			<form name="bookingForm" novalidate>
+				<div class="row">
+					<!-- Service selection -->
+					<div class="form-group col-xs-6 col-sm-3">
+						<service-select></service-select>
+					</div>
+					<!-- Service selection - End -->
+					
+					<!-- Salon selection -->
+					<div class="form-group col-xs-6 col-sm-3" ng-show="isSelectedService">
+						<salon-select></salon-select>
+					</div>
+					<!-- Salon selection - End -->
+					
+					<!-- Assistant selection -->
+					<div class="form-group col-xs-6 col-sm-3" ng-show="isSelectedService && isSelectedSalon">
+						<assistant-select></assistant-select>
+					</div>
+					<!-- Assistant selection - End -->
+					
+					<!-- Assistant image -->
+					<div class="form-group col-xs-6 col-sm-3" ng-show="isSelectedAssistant">
+						<img ng-src="{{bookingCtrl.bookingModel.assistant.image}}" class="img-circle" />
+					</div>
+				</div>
+				<div class="row" ng-show="isSelectedService && isSelectedSalon">
+					<!-- Date selection -->
+					<div class="form-group col-xs-6 col-sm-3">
+						<date-select></date-select>
+					</div>
+					<!-- Date selection End -->
+					
+					<!-- Time selection -->
+					<div class="form-group col-xs-6 col-sm-3" ng-show="isSelectedDate">
+						<time-select></time-select>
+					</div>
+					<!-- Time selection - End -->
+					
+					<!-- Customer information -->
+					<div class="col-xs-6 col-sm-3" ng-show="isSelectedTime">
+						<customer-info></customer-info>
+						<button type="reset" class="btn btn-default pull-right" ng-click="reset()">Reset</button>
+						<confirmation-button></confirmation-button>
+					</div>
+					<!-- Customer information - End -->
+				</div>
+			</form>
+		</div>
+		
+		<div ng-hide="customerCtrl.data.settings.isSelectServiceFirst"></div>
+	</div>
+</body>
+</html>

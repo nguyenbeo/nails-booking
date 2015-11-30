@@ -1,0 +1,11 @@
+{
+	"serviceId" : 1,
+	"salonId" : 1,
+	"schedule" : [0,1,2,3,4,5,6],
+	"specialSchedules" : [
+		{
+			"specialDate" : "2015-12-25",
+			"isClosed" : true
+		}
+	]
+}

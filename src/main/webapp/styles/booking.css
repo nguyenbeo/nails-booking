@@ -1,0 +1,22 @@
+#booking .service-desc {
+	cursor: pointer;
+}
+
+#booking .selectTime {
+	margin-top: 10px !important;
+}
+
+#booking .timeSlot {
+	padding: 5px 0px;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+#booking .timeSlot:hover, #booking .timeSlot.active {
+	background-color: #269abc;
+	color: #fff;
+}
+
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}

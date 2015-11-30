@@ -1,0 +1,67 @@
+[
+	{
+		"category" : "Category 1",
+		"services" : [
+			{
+				"id" : 1,
+				"name": "Service 1",
+				"price": "650 SEK",
+				"time": "1:30",
+				"desc": "Description for service 1",
+				"salons": [
+					{
+						"id": 1,
+						"name": "Salon 1",
+						"address": "Kopparvägen 29 LGH 1503, 17672, Järfälla",
+						"assistants" : [
+							{
+								"id": 1,
+								"name": "Nguyen Beo",
+								"image": "https://avatars3.githubusercontent.com/u/1420082?v=3&s=140",
+								"desc": "Experienced assistant"
+							}
+						]
+					},
+					{
+						"id": 2,
+						"name": "Salon 2",
+						"address": "Kopparvägen 29 LGH 1504, 17672, Järfälla"
+					}
+				]
+			},
+			{
+				"id" : 2,
+				"name": "Service 2",
+				"price": "550 SEK",
+				"time": "1:00",
+				"desc": "Description for service 2",
+				"salons": [
+					{
+						"id": 3,
+						"name": "Salon 3",
+						"address": "Kopparvägen 29 LGH 1505, 17672, Järfälla"
+					}
+				]
+			}
+		]
+	},
+	{
+		"category" : "Category 2",
+		"services" : [
+			{
+				"id" : 3,
+				"name": "Service 3",
+				"price": "450 SEK",
+				"time": "1:15",
+				"desc": "Description for service 3"
+			},
+			{
+				"id" : 4,
+				"name": "Service 4",
+				"price": "570 SEK",
+				"time": "1:00",
+				"desc": "Description for service 4"
+			}
+		]
+	}
+]

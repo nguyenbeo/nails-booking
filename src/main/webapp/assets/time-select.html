@@ -1,0 +1,11 @@
+<label for="time">Select time</label>
+<input readonly ng-model="bookingCtrl.bookingModel.time" type="text" class="form-control" id="time" />
+<div class="well well-sm">
+	<div class="row">
+		<div class="col-xs-8 col-sm-6 text-center" ng-repeat="timeSlot in timeSlots">
+			<div class="timeSlot" ng-class="{active:checkSelectedTime(timeSlot.from,timeSlot.to)}" ng-click="selectTime(timeSlot.from,timeSlot.to)">
+				{{timeSlot.from}} - {{timeSlot.to}}
+			</div>
+		</div>
+	</div>
+</div>

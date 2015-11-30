@@ -1,0 +1,15 @@
+<label for="service">Select service</label>
+<select id="service" class="form-control" ng-model="bookingCtrl.bookingModel.service" 
+	ng-change="selectService()" ng-init="bookingCtrl.bookingModel.service=''" />
+	<option value="">--Select service--</option>
+	<optgroup ng-repeat="categoryServices in customerCtrl.services" label="{{categoryServices.category}}">
+		<option ng-repeat="service in categoryServices.services" value="{{service.id}}">
+			{{service.name}}
+		</option>
+	</optgroup>
+</select>
+<div ng-show="isSelectedService && bookingCtrl.bookingModel.service != ''">
+	Price: {{selectedService.price}}. Time: {{selectedService.time}}. 
+	<span class="glyphicon glyphicon-info-sign service-desc" aria-hidden="true" 
+		 uib-popover="{{selectedService.desc}}" popover-trigger="mouseenter"></span>
+</div>

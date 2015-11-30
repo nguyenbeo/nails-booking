@@ -1,0 +1,6 @@
+<label for="salon">Select assistant</label>
+<select id="salon" class="form-control" ng-model="bookingCtrl.bookingModel.assistant"
+	ng-init="bookingCtrl.bookingModel.assistant=''"
+	ng-options="assistant.name for assistant in bookingCtrl.bookingModel.salon.assistants" ng-change="selectAssistant()">
+	<option value="">-- Anyone --</option>
+</select>

@@ -1,0 +1,9 @@
+<label for="salon">Select salon</label>
+<select id="salon" class="form-control" ng-model="bookingCtrl.bookingModel.salon" 
+	ng-init="bookingCtrl.bookingModel.salon=''"
+	ng-options="salon.name for salon in selectedService.salons" ng-change="selectSalon()"/>
+	<option value="">-- Select salon--</option>
+</select>
+<div ng-show="isSelectedSalon">
+	Address: {{bookingCtrl.bookingModel.salon.address}} <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+</div>

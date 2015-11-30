@@ -1,0 +1,46 @@
+<div ng-controller="ConfirmationPopupCtrl as confirmationCtrl">
+	<script type="text/ng-template" id="confirmationContent.html">
+		<div class="modal-header">
+			<h3 class="modal-title">Appointment confirmation</h3>
+		</div>
+		<div class="modal-body">
+			<dl class="dl-horizontal">
+				<dt>Service</dt>
+				<dd>{{booking.service}}<br/>
+
+				</dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Salon</dt>
+				<dd>{{booking.salon.name}}<br/>
+					Address: {{booking.salon.address}}
+				</dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Assistant</dt>
+				<dd>{{booking.assistant.name}}</dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Date</dt>
+				<dd>{{booking.date}}</dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Time</dt>
+				<dd>{{booking.time}}</dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Personal Info</dt>
+				<dd>
+					Name: {{booking.customerName}}<br/>
+					Email: {{booking.customerEmail}}<br/>
+					Phone: {{booking.customerPhone}}
+				</dd>
+			</dl>	
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" type="button" ng-click="book()">Book</button>
+			<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+		</div>
+	</script>
+	<button type="button" class="btn btn-primary pull-right" ng-click="bookingForm.$valid && open(bookingCtrl.bookingModel)">Confirm</button>
+</div>

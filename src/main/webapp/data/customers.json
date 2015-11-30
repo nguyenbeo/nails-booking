@@ -1,0 +1,13 @@
+{
+	"id" : 1,
+	"logo" : "images/mikkalogo.png",
+	"name" : "Center nails",
+	"description" : "Center nails has a series of beauty salons around Stockholm",
+	"settings" : {
+		"isShowedLogo" : true,
+		"isSelectServiceFirst" : true,
+		"dateFormat" : "dd-MMMM-yyyy",
+		"timeFormat": "hh:mm",
+		"bookBeforeNoOfDays": 30
+	}
+}
